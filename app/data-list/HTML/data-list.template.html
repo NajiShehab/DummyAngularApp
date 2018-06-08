@@ -1,8 +1,24 @@
-<input ng-model="$ctrl.query"/>
-TOTAL NUMBER LOADED:{{$ctrl.number}}
-<ul>
-    <li ng-repeat="item in $ctrl.itemData | filter: $ctrl.query">
-        <a href="#!">{{item.title}}</a>
-        {{item.text | json}}
-    </li>
-</ul>
+<div class="header">
+    <h1>HACKER STORIES</h1>
+    TOTAL NUMBER LOADED:{{$ctrl.number}}
+</div>
+
+
+<div class="row">
+    <div class="rightcolumn">
+        <div class="card">
+            <h2>Search Title</h2>
+            <input ng-model="$ctrl.query"/>
+        </div>
+    </div>
+    <div ng-repeat="item in $ctrl.itemData | filter: $ctrl.query">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>{{item.title}}</h2>
+                <h5>By: {{item.by}}</h5>
+                <h5>Insert Time Here</h5>
+                <div class="card">{{item.text}}</div>
+            </div>
+        </div>
+    </div>
+</div>
