@@ -8,6 +8,7 @@ myData.component('listOfStoriesComponent', {
         self.itemData = [];
         self.maxID = 0;
         self.number = 0;
+        self.orderProp = 'title';
 
 
         $http.get('https://hacker-news.firebaseio.com/v0/maxitem.json?print=pretty').then(function(response) {

@@ -9,15 +9,25 @@
         <div class="card">
             <h2>Search Title</h2>
             <input ng-model="$ctrl.query"/>
+            </br>
+            <h2>Sort by:</h2>
+            <select ng-model="$ctrl.orderProp">
+                <option value="title">Title</option>
+                <option value="-score">Likes</option>
+                <option value="-descendants">Comments</option>
+            </select>
+            </p>
         </div>
     </div>
-    <div ng-repeat="item in $ctrl.itemData | filter: $ctrl.query">
+    <div ng-repeat="item in $ctrl.itemData | filter: $ctrl.query | orderBy:$ctrl.orderProp">
         <div class="leftcolumn">
             <div class="card">
                 <h2>{{item.title}}</h2>
                 <h5>By: {{item.by}}</h5>
                 <h5>Insert Time Here</h5>
                 <div class="card">{{item.text}}</div>
+                <span>Likes: {{item.score}}</span>
+                <span>Comments: {{item.descendants}}</span>
             </div>
         </div>
     </div>
