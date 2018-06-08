@@ -15,10 +15,10 @@ myData.component('listOfStoriesComponent', {
 
             var itemID;
 
-            for (itemID = self.maxID; itemID>self.maxID-300; itemID--)
+            for (itemID = self.maxID; itemID>self.maxID-5000; itemID--)
 
                 $http.get('https://hacker-news.firebaseio.com/v0/item/' + itemID +'.json?print=pretty').then(function(response){
-                    if(response.data.type === 'story' && response.data.title != null){
+                    if(response.data.type === 'story' && response.data.title != null && response.data.text != null){
                         self.itemData.push(response.data);
                         self.number++;
                     }

@@ -3,5 +3,6 @@ TOTAL NUMBER LOADED:{{$ctrl.number}}
 <ul>
     <li ng-repeat="item in $ctrl.itemData | filter: $ctrl.query">
         <a href="#!">{{item.title}}</a>
+        {{item.text | json}}
     </li>
 </ul>
