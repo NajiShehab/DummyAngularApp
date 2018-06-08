@@ -1,9 +1,5 @@
 # AngularJS Phone Catalog Tutorial Application
 
-
-## Overview
-
-
 ## Prerequisites
 
 ### Git
